@@ -1,43 +1,5 @@
 "use strict"
 
-function renderCoffee(coffee) {
-    let html = "<div class='coffee'>";
-    html += `<h4 class="coffee-list-name">${coffee.name}</h4>`;
-    html += `<p>${coffee.roast}</p>`;
-    html += "</div>";
-
-    // let html = '<tr class="coffee">';
-    // html += `<td>${coffee.id}</td>`;
-    // html += `<td>${coffee.name}</td>`;
-    // html += `<td>${coffee.roast}</td>`;
-    // html += '</tr>';
-
-    return html;
-}
-
-function renderCoffees(coffees) {
-    let html = '';
-    for (let i = 0; i < coffees.length; i++) {
-        html += renderCoffee(coffees[i]);
-
-    // for(let i = coffees.length - 1; i >= 0; i--) {
-    //     html += renderCoffee(coffees[i]);
-    }
-    return html;
-}
-
-function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
-    const selectedRoast = roastSelection.value;
-    const filteredCoffees = [];
-    coffees.forEach( coffee => {
-        if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
-        }
-    });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
-}
-
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 const coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -56,6 +18,44 @@ const coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+function updateCoffees(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    const selectedRoast = roastSelection.value;
+    const filteredCoffees = [];
+    coffees.forEach(coffee => {
+        if (coffee.roast === selectedRoast) {
+            filteredCoffees.push(coffee);
+        }
+    });
+    tbody.innerHTML = renderCoffees(filteredCoffees);
+}
+
+function renderCoffees(coffees) {
+    let html = '';
+    for (let i = 0; i < coffees.length; i++) {
+        html += renderCoffee(coffees[i]);
+
+        // for(let i = coffees.length - 1; i >= 0; i--) {
+        //     html += renderCoffee(coffees[i]);
+    }
+    return html;
+}
+
+function renderCoffee(coffee) {
+    let html = "<div class='coffee'>";
+    html += `<h4 class="coffee-list-name">${coffee.name}</h4>`;
+    html += `<p>${coffee.roast}</p>`;
+    html += "</div>";
+
+    // let html = '<tr class="coffee">';
+    // html += `<td>${coffee.id}</td>`;
+    // html += `<td>${coffee.name}</td>`;
+    // html += `<td>${coffee.roast}</td>`;
+    // html += '</tr>';
+
+    return html;
+}
+
 const tbody = document.querySelector('#coffees');
 const submitButton = document.querySelector('#submit');
 const roastSelection = document.querySelector('#roast-selection');
@@ -63,6 +63,26 @@ const roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+// FLOW: updateCoffees --> renderCoffees --> renderCoffee
+
+// Coffee search - click
+document.querySelector("#roast-selection").addEventListener("input", clickSearch)
+
+function clickSearch(ev) {
+    const roastVal = ev.target.value;
+
+    // filter
+    let roastFilter;
+    if (roastVal !== "all") {
+        roastFilter = coffees.filter(coffee => coffee.roast === roastVal);
+    } else {
+        roastFilter = coffees;
+    }
+
+    tbody.innerHTML = renderCoffees(roastFilter);
+}
+
 
 // Coffee Search
 // document.querySelector("#coffee-name").addEventListener("input", filterSearch)
@@ -100,4 +120,18 @@ submitButton.addEventListener('click', updateCoffees);
 //     }
 // }
 // document.addEventListener("input", coffeeSearchFunction);
+
+
+// 2nd form
+document.querySelector("#add-coffee-btn").addEventListener("click", addCoffee);
+
+function addCoffee (){
+    const newRoast = document.querySelector("#add-coffee").value;
+    const newName = document.querySelector("#add-coffee-name").value;
+    const newID = coffees.length + 1;
+
+    const newCoffee = { id: newID, name: newName, roast: newRoast};
+    coffees.push(newCoffee);
+}
+
 

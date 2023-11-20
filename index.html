@@ -33,11 +33,11 @@
 		<div class="col">
 			<form>
 				<label for="roast-selection">Roast</label>
-				<select class="form-select" name="Coffee-preference" id="roast-selection">
-					<option value="1">light</option>
-					<option value="2">medium</option>
-					<option value="3">dark</option>
-					<option selected value="4">All</option>
+				<select class="form-select" name="roast-selection" id="roast-selection">
+					<option value="light">light</option>
+					<option value="medium">medium</option>
+					<option value="dark">dark</option>
+					<option selected value="all">all</option>
 				</select>
 				<div class="mb-3">
 					<label for="coffee-name" class="form-label">Coffee Name</label>
@@ -52,15 +52,15 @@
 			<form>
 				<label for="add-coffee">Roast</label>
 				<select class="form-select" name="add-coffee" id="add-coffee">
-					<option value="1">light</option>
-					<option value="2">medium</option>
-					<option value="3">dark</option>
+					<option value="light">light</option>
+					<option value="medium">medium</option>
+					<option value="dark">dark</option>
 				</select>
 				<div class="mb-3">
 					<label for="add-coffee-name" class="form-label">Name</label>
-					<input class="form-control" id="add-coffee-name">
+					<input name="add-coffee-name" class="form-control" id="add-coffee-name">
 				</div>
-				<button type="button" class="btn btn-primary w-100 id="add-coffee-btn">Submit</button>
+				<button type="button" class="btn btn-primary w-100" id="add-coffee-btn">Submit</button>
 			</form>
 
 		</div>
