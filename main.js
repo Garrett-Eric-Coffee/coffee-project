@@ -2,7 +2,7 @@
 
 function renderCoffee(coffee) {
     let html = "<div class='coffee'>";
-    html += `<h4 class="coffee-name">${coffee.name}</h4>`;
+    html += `<h4 class="coffee-list-name">${coffee.name}</h4>`;
     html += `<p>${coffee.roast}</p>`;
     html += "</div>";
 
@@ -65,16 +65,33 @@ tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
 
 // Coffee Search
+// document.querySelector("#coffee-name").addEventListener("input", filterSearch)
+// function filterSearch() {
+//     const searchInput = document.querySelector("#coffee-name");
+//     const filter = searchInput.value.toLowerCase();
+//     const coffeeNames = Array.from(document.querySelector(".coffee-list-name"));
+//
+//     coffeeNames.forEach((item) => {
+//         let text = item.textContent;
+//         if (text.toLowerCase().includes(filter.toLowerCase())) {
+//             console.log("it works")
+//             // item.style.display = ""
+//         } else {
+//             // item.style.display = "none"
+//         }
+//     })
+// }
+
 // const coffeeSearchFunction = () => {
 //     const searchCoffee = document.querySelector("#coffee-name").value.toLowerCase();
-//     const coffee = document.querySelectorAll(".coffee");
-//     const getCoffeeName = document.querySelectorAll(".coffee-name");
+//     const coffee = document.querySelectorAll(".coffee-list-name");
+//     const getCoffeeName = document.querySelectorAll(".coffee-list-name");
 //
 //     for(let i = 0; getCoffeeName.length; i++) {
-//         let textMatch = coffee[i].querySelectorAll(".coffee-name")[0];
+//         let textMatch = coffee[i].querySelectorAll(".coffee-list-name")[0];
 //     }
 //     if(textMatch){
-//         let text = textMatch.innerHTML
+//         let text = textMatch.textContent
 //         if (text.toLowerCase().indexOf(searchCoffee) > - 1) {
 //             coffee[i].style.display = "";
 //         } else {
@@ -82,5 +99,5 @@ submitButton.addEventListener('click', updateCoffees);
 //         }
 //     }
 // }
-// document.addEventListener("keyup", coffeeSearchFunction);
+// document.addEventListener("input", coffeeSearchFunction);
 
