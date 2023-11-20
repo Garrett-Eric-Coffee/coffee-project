@@ -5,7 +5,9 @@
 h1 {
     text-align: center;
 }
-
+h4, p {
+    display: inline;
+}
 table {
     border-collapse: collapse;
     margin: 15px 0;

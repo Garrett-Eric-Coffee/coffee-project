@@ -21,27 +21,24 @@
 	<div class="row">
 
 		<div class="col">
-			Filtered selection
-			<div id="coffees">
+			<div id="coffees" class="row">
 
 			</div>
-<!--			<table>-->
-<!--				<tbody id="coffees"></tbody>-->
-<!--			</table>-->
+
 		</div>
 
 		<div class="col">
 			<form>
-				<label for="roast-selection">Roast</label>
-				<select class="form-select" name="roast-selection" id="roast-selection">
+				<label for="roast-selection" class="fw-bold">Roast</label>
+				<select class="form-select my-2" name="roast-selection" id="roast-selection">
 					<option value="light">light</option>
 					<option value="medium">medium</option>
 					<option value="dark">dark</option>
 					<option selected value="all">all</option>
 				</select>
 				<div class="mb-3">
-					<label for="coffee-name" class="form-label">Coffee Name</label>
-					<input class="form-control" id="coffee-name">
+					<label for="coffee-name" class="form-label fw-bold">Coffee Name</label>
+					<input class="form-control" id="coffee-name" placeholder="Search By Coffee Name...">
 				</div>
 				<button type="button" class="btn btn-primary w-100" id="submit">Submit</button>
 			</form>
@@ -50,15 +47,15 @@
 			<h1 class="my-3">Add a Coffee</h1>
 
 			<form>
-				<label for="add-coffee">Roast</label>
-				<select class="form-select" name="add-coffee" id="add-coffee">
+				<label for="add-coffee" class="fw-bold">Roast</label>
+				<select class="form-select my-2" name="add-coffee" id="add-coffee">
 					<option value="light">light</option>
 					<option value="medium">medium</option>
 					<option value="dark">dark</option>
 				</select>
 				<div class="mb-3">
-					<label for="add-coffee-name" class="form-label">Name</label>
-					<input name="add-coffee-name" class="form-control" id="add-coffee-name">
+					<label for="add-coffee-name" class="form-label fw-bold">Name</label>
+					<input name="add-coffee-name" class="form-control" id="add-coffee-name" placeholder="Enter Coffee Name...">
 				</div>
 				<button type="button" class="btn btn-primary w-100" id="add-coffee-btn">Submit</button>
 			</form>
