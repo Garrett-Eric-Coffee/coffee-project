@@ -34,9 +34,6 @@ function renderCoffees(coffees) {
     let html = '';
     for (let i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
-
-        // for(let i = coffees.length - 1; i >= 0; i--) {
-        //     html += renderCoffee(coffees[i]);
     }
     return html;
 }
@@ -46,12 +43,6 @@ function renderCoffee(coffee) {
     html += `<h4 class="coffee-list-name p-2">${coffee.name}</h4>`;
     html += `<p class="text-secondary">${coffee.roast}</p>`;
     html += "</div>";
-
-    // let html = '<tr class="coffee">';
-    // html += `<td>${coffee.id}</td>`;
-    // html += `<td>${coffee.name}</td>`;
-    // html += `<td>${coffee.roast}</td>`;
-    // html += '</tr>';
 
     return html;
 }
