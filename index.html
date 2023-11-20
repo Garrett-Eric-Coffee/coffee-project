@@ -10,11 +10,19 @@
 
 </head>
 <body>
+<!--NAV BAR-->
+<nav class="navbar bg-body-tertiary">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#">
+			<i class="fa-solid fa-mug-hot" style="color: #000000;"> E&G Coffee Shop</i>
+		</a>
+	</div>
+</nav>
 
 <div class="container">
 
 <!--	First row-->
-	<div class="row">
+	<div class="row" id="title">
 		<h1>Coffee! ☕</h1>
 		<hr>
 	</div>
@@ -32,7 +40,7 @@
 		<div class="col">
 
 <!--			First form-->
-			<form>
+			<form id="selection-form">
 				<label for="roast-selection" class="fw-bold">Roast</label>
 				<select class="form-select my-2" name="roast-selection" id="roast-selection">
 					<option value="light">light</option>
@@ -75,6 +83,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/88f3753932.js" crossorigin="anonymous"></script>
 
 </body>
 </html>

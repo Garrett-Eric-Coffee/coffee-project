@@ -77,14 +77,12 @@ function clickSearch(ev) {
 
 // Coffee Search
 const searchBar = document.querySelector("#coffee-name");
-
-function searchForCoffee() {
+function searchForCoffee(e) {
     let searchCoffee = searchBar.value.toUpperCase();
     let filteredSearch = [];
     coffees.forEach(function (coffee) {
         if (coffee.name.toUpperCase().includes(searchCoffee)) {
             filteredSearch.push(coffee);
-            console.log(filteredSearch);
         }
     });
     tbody.innerHTML = renderCoffees(filteredSearch);

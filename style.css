@@ -8,6 +8,10 @@ h1 {
 h4, p {
     display: inline;
 }
+
+body {
+    background-color: tan;
+}
 table {
     border-collapse: collapse;
     margin: 15px 0;
