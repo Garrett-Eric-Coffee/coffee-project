@@ -77,10 +77,11 @@ function clickSearch(ev) {
 
 // Coffee Search
 const searchBar = document.querySelector("#coffee-name");
+
 function searchForCoffee() {
     let searchCoffee = searchBar.value.toUpperCase();
     let filteredSearch = [];
-    coffees.forEach(function(coffee) {
+    coffees.forEach(function (coffee) {
         if (coffee.name.toUpperCase().includes(searchCoffee)) {
             filteredSearch.push(coffee);
             console.log(filteredSearch);
@@ -88,19 +89,34 @@ function searchForCoffee() {
     });
     tbody.innerHTML = renderCoffees(filteredSearch);
 }
+
 searchBar.addEventListener('keyup', searchForCoffee);
 
 
 // 2nd form
 document.querySelector("#add-coffee-btn").addEventListener("click", addCoffee);
 
-function addCoffee (){
+function addCoffee() {
     const newRoast = document.querySelector("#add-coffee").value;
     const newName = document.querySelector("#add-coffee-name").value;
     const newID = coffees.length + 1;
 
-    const newCoffee = { id: newID, name: newName, roast: newRoast};
-    coffees.push(newCoffee);
+    function checkName(newName){
+        let validCount = 0;
+        for (let c of newName) {
+            if (c.toLowerCase().charCodeAt(0) >= 97 && c.toLowerCase().charCodeAt(0) <= 122){
+                validCount++;
+            }
+        }
+        return validCount > newName.length*.5;
+    }
+    const validName = checkName(newName);
+
+    if (validName) {
+        const newCoffee = {id: newID, name: newName, roast: newRoast};
+        coffees.push(newCoffee);
+        tbody.innerHTML = renderCoffees(coffees);
+    }
 }
 
 
