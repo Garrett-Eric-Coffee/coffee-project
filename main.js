@@ -1,10 +1,10 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    let html = `<div id='coffee' class='container'>`
-    html += '<h1>${coffee.name}</h1>'
-    html += '<p>${coffee.roast}</p>'
-    html += "</div>"
+    let html = "<div class='coffee'>";
+    html += `<h4 class="coffee-name">${coffee.name}</h4>`;
+    html += `<p>${coffee.roast}</p>`;
+    html += "</div>";
 
     // let html = '<tr class="coffee">';
     // html += `<td>${coffee.id}</td>`;
@@ -17,8 +17,11 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     let html = '';
-    for(let i = coffees.length - 1; i >= 0; i--) {
+    for (let i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
+
+    // for(let i = coffees.length - 1; i >= 0; i--) {
+    //     html += renderCoffee(coffees[i]);
     }
     return html;
 }
@@ -60,3 +63,24 @@ const roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+// Coffee Search
+const coffeeSearchFunction = () => {
+    const searchCoffee = document.querySelector("#coffee-name").value.toLowerCase();
+    const coffee = document.querySelectorAll(".coffee");
+    const getCoffeeName = document.querySelectorAll(".coffee-name");
+
+    for(let i = 0; getCoffeeName.length; i++) {
+        let textMatch = coffee[i].querySelectorAll(".coffee-name")[0];
+    }
+    if(textMatch){
+        let text = textMatch.innerHTML
+        if (text.toLowerCase().indexOf(searchCoffee) > - 1) {
+            coffee[i].style.display = "";
+        } else {
+            coffee[i].style.display = "We Dont Have That Flavor"
+        }
+    }
+
+}
+

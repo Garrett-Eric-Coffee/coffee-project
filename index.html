@@ -22,6 +22,12 @@
 
 		<div class="col">
 			Filtered selection
+			<div id="coffees">
+
+			</div>
+<!--			<table>-->
+<!--				<tbody id="coffees"></tbody>-->
+<!--			</table>-->
 		</div>
 
 		<div class="col">
@@ -31,6 +37,7 @@
 					<option value="1">light</option>
 					<option value="2">medium</option>
 					<option value="3">dark</option>
+					<option selected value="4">All</option>
 				</select>
 				<div class="mb-3">
 					<label for="coffee-name" class="form-label">Coffee Name</label>
@@ -39,6 +46,7 @@
 				<button type="button" class="btn btn-primary w-100">Submit</button>
 			</form>
 
+			<hr class="mt-3">
 			<h1 class="my-3">Add a Coffee</h1>
 
 			<form>
@@ -49,10 +57,10 @@
 					<option value="3">dark</option>
 				</select>
 				<div class="mb-3">
-					<label for="coffee-name2" class="form-label">Name</label>
-					<input class="form-control" id="coffee-name2">
+					<label for="add-coffee-name" class="form-label">Name</label>
+					<input class="form-control" id="add-coffee-name">
 				</div>
-				<button type="button" class="btn btn-primary w-100">Submit</button>
+				<button type="button" class="btn btn-primary w-100 id="add-coffee-btn">Submit</button>
 			</form>
 
 		</div>
