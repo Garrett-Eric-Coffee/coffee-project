@@ -65,22 +65,22 @@ tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
 
 // Coffee Search
-const coffeeSearchFunction = () => {
-    const searchCoffee = document.querySelector("#coffee-name").value.toLowerCase();
-    const coffee = document.querySelectorAll(".coffee");
-    const getCoffeeName = document.querySelectorAll(".coffee-name");
-
-    for(let i = 0; getCoffeeName.length; i++) {
-        let textMatch = coffee[i].querySelectorAll(".coffee-name")[0];
-    }
-    if(textMatch){
-        let text = textMatch.innerHTML
-        if (text.toLowerCase().indexOf(searchCoffee) > - 1) {
-            coffee[i].style.display = "";
-        } else {
-            coffee[i].style.display = "We Dont Have That Flavor"
-        }
-    }
-
-}
+// const coffeeSearchFunction = () => {
+//     const searchCoffee = document.querySelector("#coffee-name").value.toLowerCase();
+//     const coffee = document.querySelectorAll(".coffee");
+//     const getCoffeeName = document.querySelectorAll(".coffee-name");
+//
+//     for(let i = 0; getCoffeeName.length; i++) {
+//         let textMatch = coffee[i].querySelectorAll(".coffee-name")[0];
+//     }
+//     if(textMatch){
+//         let text = textMatch.innerHTML
+//         if (text.toLowerCase().indexOf(searchCoffee) > - 1) {
+//             coffee[i].style.display = "";
+//         } else {
+//             coffee[i].style.display = "none"
+//         }
+//     }
+// }
+// document.addEventListener("keyup", coffeeSearchFunction);
 
