@@ -30,6 +30,7 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
+// Changed Loop to render coffee info in ascending "ID" order
 function renderCoffees(coffees) {
     let html = '';
     for (let i = 0; i < coffees.length; i++) {
@@ -38,6 +39,7 @@ function renderCoffees(coffees) {
     return html;
 }
 
+// Changed code to input coffee info as a div with a h4 and paragraph
 function renderCoffee(coffee) {
     let html = "<div class='coffee col-6 p-2'>";
     html += `<h4 class="coffee-list-name p-2">${coffee.name}</h4>`;
@@ -47,6 +49,7 @@ function renderCoffee(coffee) {
     return html;
 }
 
+// already established variables
 const tbody = document.querySelector('#coffees');
 const submitButton = document.querySelector('#submit');
 const roastSelection = document.querySelector('#roast-selection');
@@ -72,27 +75,39 @@ function clickSearch(ev) {
     }
     tbody.innerHTML = renderCoffees(roastFilter);
 }
-function test(){
-    return document.querySelector("#roast-selection").value;
-}
-// Coffee Search
+
+
+// COFFEE SEARCH BAR
+
+// Var for html searchbar
 const searchBar = document.querySelector("#coffee-name");
+
+// Function to create cohesive select search and searchbar search
 function searchForCoffee(e) {
+    // Leveraging select box feature to refine searchbar
+    let selectedRoast = document.querySelector("#roast-selection").value;
+    let filterArray;
+    if (selectedRoast !== "all") {
+        filterArray = coffees.filter(coffee => coffee.roast === selectedRoast);
+    } else {
+        filterArray = coffees;
+    }
+
+    // toLowerCase to make search case insensitive
     let searchCoffee = searchBar.value.toLowerCase();
     let filteredSearch = [];
-    coffees.forEach(function (coffee) {
+    filterArray.forEach(function (coffee) {
         if (coffee.name.toLowerCase().includes(searchCoffee)) {
             filteredSearch.push(coffee);
         }
     });
     tbody.innerHTML = renderCoffees(filteredSearch);
 }
-
 searchBar.addEventListener('keyup', searchForCoffee);
 
 
 
-// 2nd form
+// 2nd form "Add a Coffee"
 document.querySelector("#add-coffee-btn").addEventListener("click", addCoffee);
 
 function addCoffee() {

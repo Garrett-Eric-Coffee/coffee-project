@@ -2,20 +2,6 @@
     box-sizing: border-box;
 }
 
-h1 {
-    text-align: center;
-    font-family: 'Titillium Web', sans-serif;
-    font-style: italic;
-    text-shadow: 2px 4px darkgrey;
-}
-h4, p {
-    display: inline;
-    font-family: 'Titillium Web', sans-serif;
-}
-
-body {
-    background-color: tan;
-}
 table {
     border-collapse: collapse;
     margin: 15px 0;
@@ -25,13 +11,34 @@ td, th {
     border: 1px solid black;
     padding: 5px 10px;
 }
+/*END OF PREVIOUSLY ESTABLISHED CODE*/
+
+/*Styling of all H1, using google font*/
+h1 {
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    font-style: italic;
+    text-shadow: 2px 4px darkgrey;
+}
+/*change elements to display inline to achieve look of them being next to one another*/
+h4, p {
+    display: inline;
+    font-family: 'Titillium Web', sans-serif;
+}
+/*A nice coffe themed color background*/
+body {
+    background-color: tan;
+}
+/*Stop links from being blue*/
 .socials {
     color: black;
 }
+/*Give flavor section border to stand out and follow coffee color theme*/
 #flavor-section {
     border: 2px solid black;
     background-color: navajowhite;
 }
+/* Change link color to black, remove underline*/
 .navbar-links {
     color: black;
     text-decoration: none;
