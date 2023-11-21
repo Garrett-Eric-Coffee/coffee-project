@@ -115,6 +115,13 @@ function addCoffee() {
     const newName = document.querySelector("#add-coffee-name").value;
     const newID = coffees.length + 1;
 
+    // have value so clear the entry name
+    document.querySelector("#add-coffee-name").value = "";
+
+    // some user input checking - try to identify nonsensical strings
+    // chars a-z are ASCII 97-122
+    // e.g. valid:  'bustello - **!'        - most chars are alphanumeric
+    // e.g. invalid 'bustello ---@@^%&))*&' - most chars are nonsensical
     function checkName(newName){
         let validCount = 0;
         for (let c of newName) {
