@@ -41,7 +41,7 @@ function renderCoffees(coffees) {
 function renderCoffee(coffee) {
     let html = "<div class='coffee col-6 p-2'>";
     html += `<h4 class="coffee-list-name p-2">${coffee.name}</h4>`;
-    html += `<p class="text-secondary">${coffee.roast}</p>`;
+    html += `<p class="text-secondary roast-name">${coffee.roast}</p>`;
     html += "</div>";
 
     return html;
@@ -70,10 +70,11 @@ function clickSearch(ev) {
     } else {
         roastFilter = coffees;
     }
-
     tbody.innerHTML = renderCoffees(roastFilter);
 }
-
+function test(){
+    return document.querySelector("#roast-selection").value;
+}
 // Coffee Search
 const searchBar = document.querySelector("#coffee-name");
 function searchForCoffee(e) {
@@ -88,6 +89,7 @@ function searchForCoffee(e) {
 }
 
 searchBar.addEventListener('keyup', searchForCoffee);
+
 
 
 // 2nd form
