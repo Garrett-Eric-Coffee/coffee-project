@@ -41,7 +41,7 @@ function renderCoffees(coffees) {
 function renderCoffee(coffee) {
     let html = "<div class='coffee col-6 p-2'>";
     html += `<h4 class="coffee-list-name p-2">${coffee.name}</h4>`;
-    html += `<p class="text-secondary roast-name">${coffee.roast}</p>`;
+    html += `<p class="text-secondary">${coffee.roast}</p>`;
     html += "</div>";
 
     return html;
@@ -78,10 +78,10 @@ function test(){
 // Coffee Search
 const searchBar = document.querySelector("#coffee-name");
 function searchForCoffee(e) {
-    let searchCoffee = searchBar.value.toUpperCase();
+    let searchCoffee = searchBar.value.toLowerCase();
     let filteredSearch = [];
     coffees.forEach(function (coffee) {
-        if (coffee.name.toUpperCase().includes(searchCoffee)) {
+        if (coffee.name.toLowerCase().includes(searchCoffee)) {
             filteredSearch.push(coffee);
         }
     });
