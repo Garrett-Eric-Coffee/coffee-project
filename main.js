@@ -74,7 +74,6 @@ function clickSearch(ev) {
     tbody.innerHTML = renderCoffees(roastFilter);
 }
 
-
 // Coffee Search
 const searchBar = document.querySelector("#coffee-name");
 function searchForCoffee(e) {
